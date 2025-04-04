@@ -6,12 +6,12 @@ var isPalindrome = function(x) {
     if(x<0) {
         return false;
     }
-
-    const stringyNum = "" + x;
-    let backStr = "";
-    for(let i=stringyNum.length-1; i>=0; i--){
-       backStr+=stringyNum[i]
+    const n = x;
+    let stringyNum = 0;
+    while(x > 0) {
+        const temp = x % 10;
+        x = Math.floor(x/10);
+        stringyNum = stringyNum * 10 + temp;
     }
-
-    return backStr === stringyNum;
+    return n === stringyNum;
 };
