@@ -8,14 +8,10 @@ var isPalindrome = function(x) {
     }
 
     const stringyNum = "" + x;
-    let ind = 0;
+    let backStr = "";
     for(let i=stringyNum.length-1; i>=0; i--){
-        
-        if(stringyNum[i] !== stringyNum[ind]) {
-            return false
-        }
-        ind++;
-
+       backStr+=stringyNum[i]
     }
-    return true;
+
+    return backStr === stringyNum;
 };
